@@ -1,0 +1,86 @@
+  
+       <h2 style="text-align:center">Registration</h2>
+        <form style="text-align:center;max-width: 20%"
+          [formGroup]="reactiveForm"
+        >
+       
+                                 <div class="sky-form-group" >
+                                 <label>
+                                  <input
+                                    class="sky-form-control"
+                                    placeholder="FirstName"
+                                    formControlName="FirstName"
+                                    [(ngModel)]="user.firstname" 
+                                           
+                                  >
+                                 </label>
+                                 <span class="help-block" *ngIf="reactiveForm.get('FirstName').errors && (reactiveForm.get('FirstName').touched|| reactiveForm.get('FirstName').dirty)">
+                                  <span *ngIf="reactiveForm.get('FirstName').errors.required">
+                                          <div class="alert alert-danger" role="alert">
+                                                 
+                                         First name Can not be left Empty.
+                                  </div>
+                                  </span>
+                                  <span *ngIf="reactiveForm.get('FirstName').errors.minlength||reactiveForm.get('FirstName').errors.maxlength">
+                                          <div class="alert alert-danger" role="alert">
+                                          First name must be between 3 and 15 in range.
+                                      </div>
+                                      </span>
+                              </span>
+                                <label>                                  
+                                  <input
+                                  class="sky-form-control"
+                                  placeholder="LastName"
+                                  formControlName="LastName"
+                                  [(ngModel)]="user.lastname"             
+                                  >
+                                </label>
+                                <label>
+                                  <input
+                                  class="sky-form-control"
+                                  placeholder="Email"
+                                  formControlName="Email" 
+                                  [(ngModel)]="user.email"            
+                                  >
+                                </label>
+                                <div *ngIf="reactiveForm.get('Email').errors && reactiveForm.get('Email').errors.skyEmail && (reactiveForm.get('Email').dirty && reactiveForm.get('Email').touched)"
+                                class="sky-error-label" >
+                                <span  [hidden]="!reactiveForm.get('Email').errors.skyEmail.invalid"  >
+                                  Enter a valid email in the joe@abc.com format.
+                                </span>
+                              </div>
+                              <label>
+                                <input
+                                class="sky-form-control"
+                                placeholder="DOB"
+                                type="date"
+                                formControlName="DOB"
+                                [(ngModel)]="user.dob"             
+                                >
+                              </label>
+                              
+                              
+                                <label>
+                                  <input
+                                  class="sky-form-control"
+                                  placeholder="Contact"
+                                  formControlName="Contact"
+                                  [(ngModel)]="user.contact"             
+                                  >
+                                </label>
+                                <label>
+                                  <input
+                                  class="sky-form-control"
+                                  placeholder="Address"
+                                  formControlName="Address" 
+                                  [(ngModel)]="user.address"            
+                                  >
+                                </label>
+                                <input type="submit" class="button"  name="submit" [disabled]="reactiveForm.invalid" value="REGISTER" (click)="postData()">
+                     </div>
+                     </form>
+       
+  <div  style=" width: 100%">
+  <app-grid [attr.userListDetails]="userListDetails"></app-grid>
+  </div>
+  

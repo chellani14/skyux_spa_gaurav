@@ -1,0 +1,19 @@
+<div style="width: 70%">
+  <sky-toolbar>
+    <sky-toolbar-item>
+      <button class="sky-btn sky-btn-primary" id="edit-btn" >
+        Edit
+      </button>
+    </sky-toolbar-item>
+    <sky-toolbar-item>
+      <sky-search >
+      </sky-search>
+    </sky-toolbar-item>
+  </sky-toolbar>
+  <sky-ag-grid-wrapper>
+    <ag-grid-angular  style="width: 50%; height: 500px;"
+     [gridOptions]="gridOptions" [rowData]="gridData">
+    </ag-grid-angular>
+  </sky-ag-grid-wrapper>
+
+</div>
