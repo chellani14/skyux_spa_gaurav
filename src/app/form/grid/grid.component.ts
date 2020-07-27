@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { SkyAgGridService, SkyCellType } from '@skyux/ag-grid';
 import { GridApi, GridOptions, GridReadyEvent } from 'ag-grid-community';
 import { SKY_AG_GRID_DEMO_DATA } from './grid_manual_data';
-// // import { formdetails } from '../../Models/formdetails';
 @Component({
   selector: 'app-grid',
   templateUrl: './grid.component.html',
@@ -11,8 +10,9 @@ import { SKY_AG_GRID_DEMO_DATA } from './grid_manual_data';
 export class GridComponent implements OnInit {
 public gridApi: GridApi;
 public gridOptions: GridOptions;
+// @Input() userListDetails: FormDetails[];
 public gridData = SKY_AG_GRID_DEMO_DATA;
-  public columnDefs = [
+public columnDefs = [
     {
       field: 'selected',
       type: SkyCellType.RowSelector
@@ -56,6 +56,9 @@ public gridData = SKY_AG_GRID_DEMO_DATA;
     }
   ];
   constructor(private agGridService: SkyAgGridService) {}
+  // ngOnChanges() {
+  //   this.gridData = this.userListDetails;
+  // }
   public ngOnInit() {
    this.gridOptions = {
      columnDefs: this.columnDefs,
