@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "app-nav.component.scss"
-    ],
-    "names": [],
-    "file": "app-nav.component.css"
-}
