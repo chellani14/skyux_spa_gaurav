@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { FormDetails } from "./Models/formdetails";
+import { FormDetails } from "../Models/formdetails";
 @Injectable({
   providedIn: "root",
 })

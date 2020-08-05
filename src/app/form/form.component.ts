@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { SkyValidators } from "@skyux/validation";
 import { FormDetails } from "../Models/formdetails";
-import { DataService } from "../shared/Data.service";
+import { DataService } from "../shared/data.service";
 @Component({
   selector: "app-form",
   templateUrl: "./form.component.html",

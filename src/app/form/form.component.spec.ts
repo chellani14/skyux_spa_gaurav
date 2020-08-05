@@ -1,8 +1,8 @@
 import { TestBed } from "@angular/core/testing";
 import { SkyAppTestModule } from "@skyux-sdk/builder/runtime/testing/browser";
 import { expect } from "@skyux-sdk/testing";
-import { DataService } from "../Data.service";
 import { FormDetails } from "../Models/formdetails";
+import { DataService } from "../shared/data.service";
 import { FormComponent } from "./form.component";
 
 describe("Form component", () => {
