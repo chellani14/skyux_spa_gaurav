@@ -86,12 +86,12 @@ export const SKY_JOB_TITLES: { [name: string]: SkyAutocompleteOption[] } = {
 
 export class SkyAgGridDemoRow {
   public selected: boolean;
-  public name: string;
-  public age: number;
-  public startDate: Date;
-  public endDate?: Date;
-  public department: SkyAutocompleteOption;
-  public jobTitle?: SkyAutocompleteOption;
+  public firstname: string;
+  public lastname: string;
+  public email: string;
+  public contact?: number;
+  public dob?: Date;
+  public address?: string;
 }
 
 export const SKY_AG_GRID_DEMO_DATA = [

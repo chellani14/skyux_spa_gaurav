@@ -18,5 +18,28 @@
   "home_title": {
     "message": "SKY UX Template",
     "_description": "Title for the home component"
+  },
+  "registration_title": {
+    "message": "Registration" ,
+    "_description": "The text for the Form Heading"  
+  },
+  "form_firstname_empty_error":{
+    "message": "First name Can not be left Empty." ,
+    "_description": "The error message text for the Form Firstname error"
+  },
+  "form_firstname_range_error":{
+    "message": " First name must be between 3 and 15 in range." ,
+    "_description": "The error message text for the Form Firstname error"
+  },
+  "form_invalid_email_error":{
+    "message": " First name must be between 3 and 15 in range." ,
+    "_description": "The error message text for the Form Firstname error"
+  },
+  "form_lastname_error":{
+    "message": "Last name Can not be left Empty." ,
+    "_description": "The error message text for the Form lastname error"
   }
+
+
+  
 }

@@ -41,7 +41,7 @@
     "@skyux/forms": "4.5.0",
     "@skyux/grids": "4.0.1",
     "@skyux/http": "4.0.0",
-    "@skyux/i18n": "4.0.1",
+    "@skyux/i18n": "^4.0.1",
     "@skyux/indicators": "4.2.0",
     "@skyux/layout": "4.2.1",
     "@skyux/list-builder-common": "4.0.0",
@@ -61,8 +61,11 @@
   "devDependencies": {
     "@angular/compiler-cli": "9.1.12",
     "@skyux-sdk/builder": "4.2.1",
+    "@skyux-sdk/builder-plugin-skyux": "4.0.0",
     "@skyux-sdk/testing": "4.0.0",
     "codelyzer": "5.2.2",
+    "html-webpack-plugin": "^3.2.0",
+    "prettier": "2.0.5",
     "ts-node": "8.3.0",
     "tslint": "6.1.2",
     "typescript": "3.8.3"
