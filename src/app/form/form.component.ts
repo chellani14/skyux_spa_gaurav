@@ -1,12 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { SkyValidators } from "@skyux/validation";
-import { FormDetails } from "../Models/formdetails";
-import { DataService } from "../shared/data.service";
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SkyValidators } from '@skyux/validation';
+import { FormDetails } from '../Models/formdetails';
+import { DataService } from '../shared/data.service';
 @Component({
-  selector: "app-form",
-  templateUrl: "./form.component.html",
-  styleUrls: ["./form.component.scss"],
+  selector: 'app-form',
+  templateUrl: './form.component.html',
+  styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
   public reactiveForm: FormGroup = new FormGroup({});
@@ -22,12 +22,12 @@ export class FormComponent implements OnInit {
     this.getUserData();
     this.reactiveForm = this.formBuilder.group({
       id: [Date.now()],
-      FirstName: ["" , [Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
-      LastName: ["", [Validators.required]],
-      Email: ["", [Validators.required, SkyValidators.email]],
-      DOB: [""],
-      Contact: ["", [Validators.required]],
-      Address: ["", [Validators.required]]
+      FirstName: ['' , [Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
+      LastName: ['', [Validators.required]],
+      Email: ['', [Validators.required, SkyValidators.email]],
+      DOB: ['', [Validators.required]],
+      Contact: ['', [Validators.required]],
+      Address: ['', [Validators.required]]
     });
   }
   public postData() {

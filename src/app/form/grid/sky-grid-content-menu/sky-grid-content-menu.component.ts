@@ -5,7 +5,7 @@ import { ICellRendererParams } from 'ag-grid-community';
 @Component({
   selector: 'app-sky-grid-content-menu',
   templateUrl: './sky-grid-content-menu.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SkyGridContentMenuComponent implements ICellRendererAngularComp {
   private firstname: string;
