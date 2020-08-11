@@ -1,11 +1,8 @@
-import {
-  Component
-} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
-  templateUrl: './app-nav.component.html',
-  styleUrls: ['./app-nav.component.scss']
+  templateUrl: './app-nav.component.html'
 })
 export class AppNavComponent {
   public nav = [
@@ -16,6 +13,10 @@ export class AppNavComponent {
     {
       titleKey: 'app_nav_about',
       path: '/about'
+    },
+    {
+      titleKey: 'app_nav_form',
+      path: '/form'
     }
   ];
 }
