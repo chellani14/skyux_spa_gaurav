@@ -14,5 +14,14 @@
   "home_title": {
     "message": "SKY UX Template",
     "_description": "Title for the home component"
+  },
+  "app-top-rated-movies": {
+    "message": "Top 10",
+    "_description": "List top 10 movies among all"
+  },
+
+  "add_movie": {
+    "message": "Add Movie",
+    "_description": "Title for the home component"
   }
 }

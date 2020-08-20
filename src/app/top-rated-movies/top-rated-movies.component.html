@@ -1,0 +1,23 @@
+<app-nav></app-nav>
+<h3>TOP RATED MOVIES</h3>
+<!--Each item requires an `id` and a property that maps to the `field` or `id` property of each column in the grid.-->
+<sky-grid
+  fit="scroll"
+  [data]="movieListDetails"
+  (sortFieldChange)="onSortChangeForGrid($event)">
+  <sky-grid-column
+    field="movieTitle"
+    heading="Movie">
+  </sky-grid-column>
+  <sky-grid-column
+    field="genre"
+    heading="Genre">
+  </sky-grid-column>
+  <sky-grid-column
+    field="rating"
+    [heading]="asyncHeading | async">
+  </sky-grid-column>
+  
+</sky-grid>
+
+

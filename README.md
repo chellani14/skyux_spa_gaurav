@@ -1,2 +1,2 @@
-# skyux_spa_gaurav
-Display user data into skyux ag-grid.
+# skyux-sdk-template
+Template for SKY UX applications created by the SKY UX CLI
