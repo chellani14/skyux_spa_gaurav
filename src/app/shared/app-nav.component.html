@@ -1,13 +1,16 @@
-<sky-navbar>
-  <sky-navbar-item *ngFor="let n of nav">
-    <a [routerLink]="n.path" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="sky-navbar-item-active">
-      {{ n.titleKey | skyAppResources }}
+<sky-navbar >
+  <sky-navbar-item >
+    <a [routerLink]="'/'" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="sky-navbar-item-active">
+      {{ homeLabel }}
     </a>
-  </sky-navbar-item>
-  <sky-navbar-item *ngFor="let n of navMovie">
-    <a  (click)="openModal()" >{{n.titleKey | skyAppResources}}</a>
-  </sky-navbar-item>
-
+  </sky-navbar-item>  
+  <sky-navbar-item >
+    <a [routerLink]="'/top-rated-movies'" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="sky-navbar-item-active">
+      {{ top10 }}
+    </a>
+  </sky-navbar-item> 
 </sky-navbar>
+
+
 
 

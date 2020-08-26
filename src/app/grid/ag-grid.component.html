@@ -1,8 +1,12 @@
 <ng-container style="width: 70%">
   <sky-toolbar>
-    <sky-toolbar-item>
+    <sky-toolbar-item><button class="sky-btn sky-btn-primary" id="edit-btn" (click)="addMovie()">
+     {{addNewMovieString}}
+    </button>
+  </sky-toolbar-item>
+  <sky-toolbar-item>
       <button class="sky-btn sky-btn-primary" id="edit-btn" (click)="openModal()">
-        Edit
+        {{editString}}
       </button>
     </sky-toolbar-item>
     <sky-toolbar-item>
@@ -16,12 +20,6 @@
     </ag-grid-angular>
   </sky-ag-grid-wrapper>
   <ng-container>
-  <sky-paging
-    pageSize="2"
-    maxPages="3"
-    [(currentPage)]="currentPage"
-    itemCount="8">
-  </sky-paging>
   
-  </ng-container>
-</ng-container>
+  
+

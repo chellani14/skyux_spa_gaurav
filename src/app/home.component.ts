@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { MovieDetails } from './Models/movie-details';
 import { DataService } from './shared/data.service';
 
@@ -8,6 +8,7 @@ import { DataService } from './shared/data.service';
 })
 export class HomeComponent implements OnInit {
   public movieListDetails: MovieDetails[] = [];
+  public $helloLabel = new EventEmitter();
   constructor(private dataService: DataService) {}
 
   public ngOnInit() {

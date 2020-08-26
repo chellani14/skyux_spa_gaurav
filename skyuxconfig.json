@@ -4,5 +4,8 @@
   "compileMode": "aot",
   "app": {
     "styles": ["@skyux/ag-grid/css/sky-ag-grid.css"]
-  }
+  },  
+    "plugins": [
+      "@skyux-sdk/builder-plugin-skyux"
+    ]  
 }

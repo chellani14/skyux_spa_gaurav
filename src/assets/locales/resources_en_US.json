@@ -19,9 +19,25 @@
     "message": "Top 10",
     "_description": "List top 10 movies among all"
   },
+  "top_rated_movies": {
+    "message": "TOP RATED MOVIES",
+    "_description": "TOP RATED MOVIES"
+  },
+  "top_10": {
+    "message":"TOP 10",
+    "_description": "TOP 10"
+},
+"edit_all_movies": {
+  "message": "Edit Movies",
+  "_description": "Title for the home component"
+},
 
-  "add_movie": {
-    "message": "Add Movie",
+  "add_new_movie": {
+    "message": "Add New Movie",
     "_description": "Title for the home component"
-  }
+  },
+  "rating": {
+    "message": "hindirating",
+    "_description": "एडिट मूवी"
+}
 }

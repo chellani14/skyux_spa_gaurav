@@ -9,7 +9,7 @@ import {
 import { SkyFluidGridModule, SkyToolbarModule } from '@skyux/layout';
 import { SkyPagingModule } from '@skyux/lists';
 import { SkySearchModule } from '@skyux/lookup';
-import { SkyModalModule } from '@skyux/modals';
+import { SkyModalModule, SkyConfirmModule } from '@skyux/modals';
 import { SkyNavbarModule } from '@skyux/navbar';
 import { SkyDropdownModule } from '@skyux/popovers';
 import { AddMovieComponent } from './add-movie/add-movie.component';
@@ -28,7 +28,8 @@ import { AgGridEditModalComponent } from './grid/ag-grid-edit-modal.component';
     SkyToolbarModule,
     SkySearchModule,
     SkyPagingModule,
-    SkyDropdownModule
+    SkyDropdownModule,
+    SkyConfirmModule
   ],
   entryComponents: [AddMovieComponent, AgGridEditModalComponent, AgGridEditModalContextComponent],
   providers: [AddMovieComponent, AgGridEditModalComponent, AgGridEditModalContextComponent]
