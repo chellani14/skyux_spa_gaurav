@@ -1,0 +1,26 @@
+{
+    "top_rated_movies": {
+        "message": "टॉप रेटेड फिल्में",
+        "_description": "टॉप रेटेड फिल्में"
+    },
+    "app_nav_home": {
+        "message": "होम",
+        "_description": "होम"
+    },
+    "top_10": {
+        "message": "टॉप 10",
+        "_description": "टॉप 10"
+    },
+    "add_new_movie": {
+        "message": "ऐड नई मूवी",
+        "_description": "ऐड नई मूवी"
+    },
+    "edit_all_movies": {
+        "message": "एडिट मूवी",
+        "_description": "एडिट मूवी"
+    },
+    "rating": {
+        "message": "hindirating",
+        "_description": "एडिट मूवी"
+    }
+}
