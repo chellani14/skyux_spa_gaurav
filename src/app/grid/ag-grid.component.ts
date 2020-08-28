@@ -131,7 +131,6 @@ export class AgGridComponent implements OnInit, OnChanges {
         alert('Edits canceled!');
       } else {
         alert('Saving data!');
-        // this.gridData = result.data;
         this.gridApi.refreshCells();
       }
     });
@@ -162,7 +161,7 @@ export class AgGridComponent implements OnInit, OnChanges {
       }
     });
   }
-  private deleteMovie(movie: MovieDetails) {
+  public deleteMovie(movie: MovieDetails) {
     const dialog: SkyConfirmInstance = this.confirmService.open({
       message: 'Do you want to delete',
       type: SkyConfirmType.YesCancel
@@ -179,7 +178,7 @@ export class AgGridComponent implements OnInit, OnChanges {
     });
   }
 
-  private editMovie(movie: MovieDetails) {
+  public editMovie(movie: MovieDetails) {
     const context = new EditGridModalContext();
     context.gridData = [movie];
     const options: any = {

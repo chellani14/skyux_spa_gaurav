@@ -1,36 +1,50 @@
-
-      <sky-modal>
-        <sky-modal-header>
-          Edit employee info
-        </sky-modal-header>
-        <sky-modal-content>
-          <div
-            id="docs-edit-grid-modal-content"
-          >
-            <sky-ag-grid-wrapper>
-              <ag-grid-angular
-                class="sky-ag-grid-editable"
-                [gridOptions]="gridOptions"
-                [rowData]="gridData"
-              >
-              </ag-grid-angular>
-            </sky-ag-grid-wrapper>
-          </div>
-        </sky-modal-content>
-        <sky-modal-footer>
-          <button
-            class="sky-btn sky-btn-primary"
-            type="button"
-            (click)="instance.save(gridData)"
-          >
-            Save
-          </button>
-          <button
-            class="sky-btn sky-btn-secondary"
-            type="button"
-            (click)="instance.cancel()"
-          >
-            Cancel
-          </button>
-        </sky-modal-footer>
-      </sky-modal>
+<sky-modal>
+    <sky-modal-header>
+     {{'add_movie' | skyAppResources}}
+    </sky-modal-header>
+    <sky-modal-content>
+     <form  class="sky-form-group" [formGroup]="formData">
+        <input class="sky-form-control" placeholder="Movie Title"
+         formControlName="movieTitle">
+        <span class="help-block"
+        *ngIf="formData.get('movieTitle').errors && (formData.get('movieTitle').touched|| formData.get('movieTitle').dirty)">
+        <span *ngIf="formData.get('movieTitle').errors.required">
+          <ng-container class="alert alert-danger" role="alert">  
+            Movie title can not be left Empty.
+          </ng-container>
+        </span>        
+      </span>
+        <input class="sky-form-control" placeholder="Genre" formControlName="genre">
+        <span class="help-block"
+        *ngIf="formData.get('genre').errors && (formData.get('genre').touched|| formData.get('genre').dirty)">
+        <span *ngIf="formData.get('genre').errors.required">
+          <ng-container class="alert alert-danger" role="alert">  
+            Genre can not be left Empty.
+          </ng-container>
+        </span>        
+      </span>
+        <input class="sky-form-control" placeholder="Rating (0-9)" type="number" formControlName="rating">
+        <span class="help-block"
+        *ngIf="formData.get('rating').errors && (formData.get('rating').touched|| formData.get('rating').dirty)">
+        <span *ngIf="formData.get('rating').errors.required">
+          <ng-container class="alert alert-danger" role="alert">  
+            Rating can not be left Empty.
+          </ng-container>
+        </span> 
+        <span *ngIf="formData.get('rating').errors.pattern">
+          <ng-container class="alert alert-danger" role="alert">  
+            Invalid Rating.
+          </ng-container>
+        </span>               
+      </span>
+        </form>
+    </sky-modal-content>
+    <sky-modal-footer>
+      <button [routerLink]="['/']"class="sky-btn sky-btn-primary"  type="button"[disabled]="formData.invalid" (click)="postData()" >
+        Save
+      </button>
+      <button   class="sky-btn sky-btn-primary sky-test-close" type="button" (click)="closeModal()">
+        Cancel
+      </button>
+    </sky-modal-footer>
+  </sky-modal>

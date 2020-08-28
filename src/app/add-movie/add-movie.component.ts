@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { SkyModalInstance } from '@skyux/modals';
 import { MovieDetails } from '../Models/movie-details';
-import { SkyCellType, SkyAgGridService } from '@skyux/ag-grid';
-import { ICellEditorParams, ColDef, GridOptions, GridApi, GridReadyEvent } from 'ag-grid-community';
+import { ColDef, GridOptions, GridApi } from 'ag-grid-community';
 import { EditGridModalContext } from '../grid/grid-edit-context';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { DataService } from '../shared/data.service';
 
 @Component({
   selector: 'app-add-movie',
@@ -12,56 +13,68 @@ import { EditGridModalContext } from '../grid/grid-edit-context';
 export class AddMovieComponent implements OnInit {
   public columnDefs: ColDef[];
   public gridData: MovieDetails[];
-  private editableColumn: boolean = false;
+  // private editableColumn: boolean = false;
 
   // private instance: SkyModalInstance;
   public movieList2: MovieDetails[] = [];
   public gridOptions: GridOptions;
   public gridApi: GridApi;
-  constructor (
+  public formData: FormGroup;
+  public movie: MovieDetails;
+  private addOrEdit: string = 'add';
+  constructor(
+    private dataService: DataService,
     public instance: SkyModalInstance,
     private context: EditGridModalContext,
-    private agGridService: SkyAgGridService
-
-  ) {}
+    private formBuilder: FormBuilder
+    ) { }
   public ngOnInit(): void {
     this.gridData = this.context.gridData;
-    if (this.context.gridData[0].movieTitle === '') { this.editableColumn = true; }
-        this.columnDefs = [
-      {
-        field: 'movieTitle',
-        headerName: 'Movie Name',
-        type: SkyCellType.Text,
-        editable: this.editableColumn
-      },
-      {
-        field: 'genre',
-        headerName: 'Genre',
-        type: SkyCellType.Text,
-        sort: 'asc',
-        editable: this.editableColumn
-      },
-      {
-        field: 'rating',
-        headerName: 'Rating',
-        type: SkyCellType.Number,
-        editable: true,
-        cellEditorParams: (params: ICellEditorParams): any => {
-          return { skyComponentProperties: { } };
-        }
-      }
-    ];
-    this.gridOptions = {
-      columnDefs: this.columnDefs,
-      onGridReady: (gridReadyEvent) => this.onGridReady(gridReadyEvent)
-    };
-    this.gridOptions = this.agGridService.getEditableGridOptions({
-      gridOptions: this.gridOptions
-    });
+    if (this.gridData[0].movieTitle !== '') {
+      console.log('it i working');
+      this.formData = this.formBuilder.group({
+        id: this.gridData[0].id,
+        selected: [this.gridData[0].selected],
+        movieTitle: [{value: this.gridData[0].movieTitle, disabled: true}],
+        genre: [{value: this.gridData[0].genre, disabled: true}],
+        rating: [
+          this.gridData[0].rating,
+          [
+            Validators.required,
+            Validators.pattern(/^('|0|1|2|3|4|5|6|7|8|9|')+$/)
+          ]
+        ]
+      });
+      this.addOrEdit = 'edit';
+    } else {
+      this.formData = this.formBuilder.group({
+        id: [Date.now()].toString(),
+        selected: false,
+        movieTitle: ['', [Validators.required]],
+        genre: ['', [Validators.required]],
+        rating: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern(/^('|0|1|2|3|4|5|6|7|8|9|')+$/)
+          ]
+        ]
+      });
+    }
   }
-  public onGridReady(gridReadyEvent: GridReadyEvent): void {
-    this.gridApi = gridReadyEvent.api;
-
-    this.gridApi.sizeColumnsToFit();
+  public postData() {
+    if (this.addOrEdit === 'add') {
+    this.dataService.saveData(this.formData.value);
+    alert('Saving Data');
+    this.instance.save();
+    } else {
+      console.log('edit');
+      this.dataService.editMovie(this.formData.value);
+      alert('Saving Data');
+      this.instance.save();
+    }
+  }
+  public closeModal() {
+    this.instance.close();
   }
 }

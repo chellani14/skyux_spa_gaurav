@@ -1,11 +1,6 @@
 import {
   TestBed
 } from '@angular/core/testing';
-
-import {
-  SkyAppTestModule
-} from '@skyux-sdk/builder/runtime/testing/browser';
-
 import {
   expect
 } from '@skyux-sdk/testing';
@@ -22,12 +17,6 @@ describe('Ag grid edit modal component', () => {
    * an adverse effect on your test performance, you can individually bring in each of your app
    * components and the SKY UX modules that those components rely upon.
    */
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [SkyAppTestModule]
-    });
-  });
-
   it('should do something', () => {
     const fixture = TestBed.createComponent(AgGridEditModalComponent);
 

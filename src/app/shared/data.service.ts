@@ -52,13 +52,15 @@ export class DataService {
   }
 
   public editMovie(movieData: MovieDetails) {
+    console.log(movieData);
     let getMovie = localStorage.getItem('testdata');
     let getMovieObj = JSON.parse(getMovie);
     for (let i = 0; i < getMovieObj.length; i++) {
-      if (getMovieObj[i].movieTitle === movieData.movieTitle && getMovieObj[i].genre === movieData.genre) {
+      if (getMovieObj[i].id === movieData.id) {
         getMovieObj[i].rating = movieData.rating;
       }
     }
+    this.$movieList.emit(getMovieObj);
     localStorage.setItem('testdata', JSON.stringify(getMovieObj));
       return true;
   }
